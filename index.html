@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">FizzhStore</h1>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#products" class="nav-link">Productos</a></li>
+                <li><a href="#about" class="nav-link">Nosotros</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="section home">
+        <h2 class="section-title">Bienvenido a FizzhStore, donde encontrarás la mejor moda de caballero.</h2>
+        <p class="section-description">Descubre las mejores prendas de moda.</p>
+    </section>
+    
+    <section id="products" class="section products">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="camiseta.jpg" alt="Camiseta Casual" class="product-img">
+                <h3 class="product-name">Camiseta Casual</h3>
+                <p class="product-price">$16.99</p>
+                <button class="product-button">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <img src="jeans.jpg" alt="Jeans Clásicos" class="product-img">
+                <h3 class="product-name">Jeans Clásicos</h3>
+                <p class="product-price">$39.99</p>
+                <button class="product-button">Comprar</button>
+            </div>
+
+            <div class="product-card">
+                <img src="chaquetaDenim.jpg" alt="Chaqueta Denim" class="product-img">
+                <h3 class="product-name">Chaqueta de Cuero</h3>
+                <p class="product-price">$80.99</p>
+                <button class="product-button">Comprar</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="section about">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <p class="section-description">Somos una tienda comprometida con la moda y la calidad.</p>
+    </section>
+    
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Contacto</h2>
+        <form class="contact-form">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+            
+            <label for="email" class="form-label">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+            
+            <label for="message" class="form-label">Mensaje:</label>
+            <textarea id="message" name="message" class="form-textarea" required></textarea>
+            
+            <button type="submit" class="form-button">Enviar</button>
+        </form>
+    </section>
+    
+    <footer class="footer">
+        <p class="footer-text">&copy; 2025 Tienda de Ropa - Todos los derechos reservados.</p>
+    </footer>
+    <-- Validación de formulario -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector(".contact-form");
+        
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); 
+        
+                
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+        
+                
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+                let errors = [];
+        
+                if (name === "") {
+                    errors.push("El campo 'Nombre' es obligatorio.");
+                }
+        
+                if (email === "" || !emailPattern.test(email)) {
+                    errors.push("Ingrese un correo electrónico válido.");
+                }
+        
+                if (message === "") {
+                    errors.push("El campo 'Mensaje' no puede estar vacío.");
+                }
+        
+                if (errors.length > 0) {
+                    alert(errors.join("\n"));
+                } else {
+                    alert("Formulario enviado con éxito.");
+                    form.submit(); 
+                }
+            });
+        });
+        </script>
+        
+</body>
+</html>
