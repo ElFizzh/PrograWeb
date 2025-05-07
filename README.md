@@ -52,5 +52,5 @@ Este proyecto es una tienda de ropa online desarrollada con Django.
 ## Acceso al Panel de Administración
 
 - URL: http://127.0.0.1:8000/admin/
-- Usuario: admin
-- Contraseña: admin123
+- Usuario: carlos
+- Contraseña: carlos123
